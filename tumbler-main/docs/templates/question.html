@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>My Tumbler | 나에게 꼭 맞는 텀블러는?</title>
+    <meta property="og:image" content="https://github.com/Pincette1223/tumbler/blob/main/static/image/og_image_1.jpg?raw=true">
+    <meta property="og:title" content="My Tumbler|텀블러 유형 테스트">
+    <meta property="og:description" content="당신을 꼭 빼닮은 텀블러를 알려드립니다🥤 환경보호 실천의 첫 발걸음, 텀블러와 함께 시작하세요">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YN67WYQHSS"></script>
+
+    <style>
+        @font-face {
+            font-family: 'NEXON Lv1 Gothic OTF';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'NEXON Lv1 Gothic OTF Light';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Light.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .section {
+            width: 495px;
+            height: 880px;
+            background-image: url("../static/image/question_background_3.png");
+            background-size: 495px 880px;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 0px;
+
+
+            margin: auto;
+
+        }
+
+        .container {
+            text-align: center;
+            width: 495px;
+            height: 100vh;
+            margin: auto;
+            padding: 70px 20px 0px 20px;
+            position: relative;
+
+        }
+
+        .q-order {
+            display: flex;
+            justify-content: flex-end;
+            font-family: 'NEXON Lv1 Gothic OTF Light';
+        }
+
+        #q-order {
+            position: relative;
+            width: 80px;
+            font-weight: 300;
+
+            text-align: center;
+            background-color: #FEBD67;
+            border-radius: 30px;
+            color: white;
+        }
+
+        .q-number {
+            margin: 30px 0px 0px 0px;
+            font-size: 24px;
+            font-weight: 300;
+            font-family: 'NEXON Lv1 Gothic OTF Light';
+        }
+
+        .question {
+            width: 450px;
+            text-align: left;
+        }
+
+        .question-line {
+            margin: 10px 0px 30px 0px;;
+            color: #24272c;
+            font-size: 36px;
+            font-family: 'NEXON Lv1 Gothic OTF';
+        }
+
+        .button {
+            margin: 25px auto;
+            border: 0px;
+            color: #24272c;
+            background-color: #FEBD67;
+            font-family: 'NEXON Lv1 Gothic OTF';
+            font-size: 10px;
+        }
+
+        .button:hover {
+            background-color: #eaf0ec;
+            color: #72a065;
+        }
+
+        @media screen and (max-width: 760px) {
+            .section {
+
+                /*height: 100vh;*/
+                /*width: 100vw;*/
+                padding: 0px;
+                /*background-size: 100vw 85vh;*/
+                background-position: center;
+                background-repeat: no-repeat;
+                margin: auto;
+
+                width: 100%;
+                height: 100vh;
+                background-size: cover;
+                /* / 사이즈가 container에 맞지 않아도 꽉 차도록 채운다 . */
+            }
+
+
+            .container {
+                flex-grow: 1;
+                margin: auto;
+                width: 100vw;
+                height: 750px;
+                padding: 70px 10px 0px 10px;
+            }
+
+            .question {
+                width: 100vw;
+            }
+
+            .question-line {
+
+                font-size: 28px;
+            }
+
+            .buttons .button {
+                font-size: 15px;
+            }
+
+        }
+
+    </style>
+    <script>
+
+        let qnas = [];
+        let currentQuestionIndex = 0;
+        let userChoices = [];
+
+        // 다음 질문 가져오기
+        function loadQuestions() {
+            $.ajax({
+                type: "GET",
+                url: "/qnas",
+                data: {},
+                success: function (response) {
+                    if (response['result'] == 'success') {
+                        qnas = response['qna'];
+                        showQuestionAt(0);
+                    }
+                }
+            })
+        }
+
+        // 답변을 할 때마다 다음 Q&A set 불러오기
+        function choose(index) {
+            userChoices.push(index);
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex === qnas.length) {
+                location.href = '/result?answers=' + userChoices.join('');
+            } else {
+                showQuestionAt(currentQuestionIndex);
+            }
+        }
+
+
+        // 성공적으로 가져온 Q&A set를 question1.html 에 보여주기
+        function showQuestionAt(index) {
+            let qna = qnas[index];
+            $('#q-number').text(`Q.${index + 1}`);
+            $('#q-order').text(`${index + 1}/12`);
+            $('#question-line').text(qna['q']);
+            $('#answers').empty();//비워야 채울 수 있따
+            let answers = qna['a'];
+            for (let i = 0; i < answers.length; i++) {
+                let tempHtml = `<button class="button is-large is-fullwidth" onclick="choose(${i});">${answers[i][0]}</button>`;
+                $('#answers').append(tempHtml);
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+<section class="section">
+    <div class="container">
+        <div class="question">
+            <div class="q-order">
+                <p id="q-order">1/12</p>
+            </div>
+            <p class="q-number" id="q-number">
+                Q.1
+            </p>
+            <p class="question-line" id="question-line">
+                평소 커피를 사러 나가면
+            </p>
+        </div>
+        <div class="buttons" id="answers">
+            <button class="button is-large is-fullwidth" onclick="choose();">입맛에 맞는 곳으로만 가서 단골이 된다</button>
+            <button class="button is-large is-fullwidth" onclick="choose();">그 날에 기분에 따라 내키는 곳으로 간다</button>
+        </div>
+    </div>
+</section>
+<script>
+    loadQuestions();
+</script>
+</body>
+</html>

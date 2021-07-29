@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Tumbler | 나에게 꼭 맞는 텀블러는?</title>
+    <meta property="og:image" content="https://github.com/Pincette1223/tumbler/blob/main/static/image/og_image_1.jpg?raw=true">
+    <meta property="og:title" content="My Tumbler|텀블러 유형 테스트">
+    <meta property="og:description" content="당신을 꼭 빼닮은 텀블러를 알려드립니다🥤 환경보호 실천의 첫 발걸음, 텀블러와 함께 시작하세요">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YN67WYQHSS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-YN67WYQHSS');
+    </script>
+    <style>
+        @font-face {
+            font-family: 'KCC-eunyoung';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/KCC-eunyoung-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'NEXON Lv1 Gothic OTF';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'NEXON Lv1 Gothic OTF Light';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Light.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .section {
+            width: 495px;
+            height: 880px;
+            background-image: url("../static/image/index_background_3.png");
+            background-size: 495px 880px;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: auto;
+        }
+
+        .container {
+            text-align: left;
+            width: 495px;
+            height: 100vh;
+            margin: auto;
+            padding: 70px 0px 0px 0px;
+            position: absolute;
+        }
+
+        .title-box {
+            width: 450px;
+
+        }
+
+        .title-line {
+            font-size: 44px;
+            margin: 5px 0px 10px 0px;
+            font-family: 'NEXON Lv1 Gothic OTF';
+        }
+
+        .subtitle {
+            margin: 0px;
+            font-size: 28px;
+            padding: 0px 0px 0px 5px;
+            font-family: 'KCC-eunyoung';
+            font-weight: 200;
+        }
+
+        .desc {
+            margin: 0px;
+            font-size: 18px;
+            padding: 0px 0px 0px 5px;
+            font-family: 'NEXON Lv1 Gothic OTF Light';
+            line-height: 1.3
+        }
+
+        .start {
+            position: relative;
+            top: 460px;
+            left: 290px;
+        }
+
+        .button {
+            border-radius: 75px;
+            width: 150px;
+            height: 150px;
+            border: 0px;
+            background-color: #FEBD67;
+            font-size: 25px;
+            font-family: 'NEXON Lv1 Gothic OTF';
+        }
+
+        h3 {
+            color: #24272c;
+        }
+
+        h3:hover {
+            color: #72a065;
+        }
+
+        .button:hover {
+            background-color: #eaf0ec;
+        }
+
+        @media screen and (max-width: 760px) {
+            .section {
+                width: 100%;
+                height: 100vh;
+                background-size: cover;
+                margin: auto;
+                padding: 0px;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+            .container {
+                flex-grow: 1;
+                margin: auto;
+                padding: 50px 0px;
+                width: 100%;
+                height: 750px;
+            }
+
+            .title-line {
+                font-size: 38px;
+            }
+
+            .subtitle {
+                margin: 0px;
+                font-size: 22px;
+            }
+
+            .desc {
+                margin: 0px;
+                font-size: 15px;
+            }
+
+            .button {
+                border-radius: 75px;
+                width: 130px;
+                height: 130px;
+                border: 0px;
+                background-color: #FEBD67;
+            }
+
+            .start {
+                position: absolute;
+                top: 590px;
+                left: 220px;
+                animation: blink 1s step-end infinite;
+            }
+
+            .title-box {
+                font-size: 2.5rem;
+                padding: 30px 0px 0px 15px;
+                width: 350px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<section class="section">
+    <div class="container">
+        <div class="title-box">
+            <p class="subtitle" style="color:#72a065;">
+                My Tumbler Type Test
+            </p>
+            <h1 class="title-line">
+                <span style="color: #FEBD67;">텀블러</span> 유형 검사
+            </h1>
+            <p class="desc" style="color: #24272c">
+                당신을 꼭 빼닮은 텀블러를 알려드립니다.<br>
+                환경보호 실천의 첫 발걸음, 텀블러와 함께!
+            </p>
+        </div>
+        <div class="start">
+            <button class="button" onclick="location.href = 'question.html'"><p>START</p></button>
+        </div>
+    </div>
+</section>
+</body>
+</html>

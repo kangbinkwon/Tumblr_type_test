@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta property="og:image" content="https://github.com/Pincette1223/tumbler/blob/main/static/image/og_image_1.jpg?raw=true">
+    <meta property="og:title" content="My Tumbler|텀블러 유형 테스트">
+    <meta property="og:description" content="당신을 꼭 빼닮은 텀블러를 알려드립니다🥤 환경보호 실천의 첫 발걸음, 텀블러와 함께 시작하세요">
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-60a8fe825998af76"></script>
+    <script>
+        function share(){
+            var t = document.createElement("textarea");
+            document.body.appendChild(t);
+            t.value = window.location.href;
+            t.select();
+            document.execCommand('copy');
+            document.body.removeChild(t);
+            alert('복사 완료!')
+        }
+    </script>
+    <title>My Tumbler | 나에게 꼭 맞는 텀블러는?</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YN67WYQHSS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-YN67WYQHSS');
+    </script>
+    <style>
+        * {
+            color: #24272c;
+            font-family: 'NEXON Lv1 Gothic OTF';
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        @font-face {
+            font-family: 'KCC-eunyoung';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/KCC-eunyoung-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'NEXON Lv1 Gothic OTF';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'NEXON Lv1 Gothic OTF Light';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Light.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .section {
+            width: 495px;
+            height: 880px;
+            margin: auto;
+            padding: 0px;
+            display: flex;
+        }
+
+
+        .result-background {
+            background-image: url("../static/image/floor.png");
+            background-size: 500px 500px;
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            width: 495px;
+            height: 500px;
+            border-radius: 0 0 50px 50px;
+            z-index: 1;
+            margin: auto;
+            position: absolute;
+        }
+
+        .result-img {
+            width: 495px;
+            height: 500px;
+            background-image: url("../static/image/result_image_1.png");
+            background-size: 350px 350px;
+            background-position: center 5%;
+            background-repeat: no-repeat;
+        }
+
+        .container {
+            text-align: center;
+            width: 200px;
+            position: relative;
+            top: 350px;
+            z-index: 2;
+        }
+
+        .result-line {
+            margin: 15px 0px 15px 0px;
+            text-align: center;
+        }
+
+        .desc_card {
+            width: 450px;
+            height: 700px;
+            margin: auto;
+            text-align: center;
+            padding: 20px 40px;
+            box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+            border-radius: 10px;
+            margin-bottom: 30px;
+            background-color: white;
+            overflow: auto;
+
+        }
+
+        .rec-tumblr {
+            margin: 10px auto;
+
+        }
+
+        .p_line {
+            font-size: 23px;
+            color: #72a065;
+        }
+
+
+        .button {
+            margin: 10px auto;
+            border: 0px;
+            color: #24272c;
+            background-color: #FEBD67;
+        }
+
+
+        .button:hover {
+            background-color: #eaf0ec;
+            color: #72a065;
+        }
+
+        #prod_list {
+            display: none;
+            width: 500px;
+            margin: 25px auto;
+            position: relative;
+        }
+        
+        #share_button {
+            width: 475px;
+            margin: auto;
+
+        @media screen and (max-width: 760px) {
+            .section {
+                width: 100%;
+                height: 100vh;
+                background-size: cover;
+                margin: auto;
+                padding: 0px;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+            .container {
+                top: 300px;
+                z-index: 2;
+            }
+
+            .result-background {
+                width: 100%;
+            }
+
+            .result-img {
+                width: 100%;
+                background-size: 300px 300px;
+            }
+
+            .desc_card {
+                width: 90%;
+            }
+
+            .column {
+                margin: auto;
+            }
+
+            .p_line {
+                font-size: 18px;
+            }
+
+        }
+
+
+    </style>
+</head>
+<body>
+
+<section class="section">
+    <div class="result-background">
+        <div class="result-img"></div>
+    </div>
+    <div class="container">
+        <div class="result">
+
+
+            <div style="padding: 0px 10px">
+                <div class="desc_card"><p class="subtitle is-4" style="color:#72a065; font-family: 'KCC-eunyoung';">{{
+                    result[0]
+                    }}</p>
+
+                    <h3 class="title is-3" class="result-line" style="font-family: 'NEXON Lv1 Gothic OTF Light';">
+                        {{ result[1] }}
+                    </h3>
+                    <p style="font-family: 'NEXON Lv1 Gothic OTF Light';">{{ result[2]}}</p>
+                    <p style="padding: 20px ;font-size:20px; font-family: 'NEXON Lv1 Gothic OTF';">{{ result[3]}} ☕️
+                    </p>
+                    <a href="{{ result[8]}}">
+                        <div class="rec-tumblr">
+                            <div class="columns is-mobile">
+                                <div class="column">
+                                    <div class="card">
+                                        <div class="card-image">
+                                            <figure class="image is-140x140">
+                                                <img src="{{ result[7] }}">
+                                            </figure>
+                                        </div>
+                                        <div class="card-content">
+                                            <div class="prod_info">
+                                                <p class="p_line" style="font-family: 'KCC-eunyoung'">'{{
+                                                    result[4]}}'</p>
+                                                <p STYLE="font-family: 'NEXON Lv1 Gothic OTF Light'">{{result[5]}}</p>
+                                                <p STYLE="font-size: 23px; font-family: 'NEXON Lv1 Gothic OTF'">
+                                                    {{result[6]}}</p>
+                                                <p class="P_line"style="font-size: 25px;font-family: 'KCC-eunyoung';color: #FEBD67">구경하러하기→</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="buttons">
+
+                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                    <div class="addthis_inline_share_toolbox" id="share_button"></div>
+            
+                </div>
+        </div>
+    </div>
+        </div>
+</section>
+</body>
+</html>
